@@ -6,9 +6,8 @@ $users = []
 sara = User.new("Sara","9999",10000)
 joey = User.new("Joey","1234",100)
 
-$users << sara
-$users << joey
-
+$users << sara.name 
+$users << joey.name
 def start_up
 
 	$users.each.to_s { |x| puts x}
@@ -29,7 +28,7 @@ def ask_for_pin(account_name)
 	puts "please enter pin"
 	puts ">"
 	account_pin = gets.chomp
-	if account_pin == account_name.pin
+	if account_pin == account_name.downcase.pin
 		print "Hello #{account_name}"  
 		user_account(account_name)
 	else
@@ -79,9 +78,6 @@ end
 def exit
 	start_up
 end
- $users.instance_variable_get("@name")
 
-# start_up
-
-# puts $users.inspect.split(',')
+start_up
 

@@ -12,9 +12,7 @@ def ammount
 	@ammount
 end
 
-def pin
-	@pin
-end
+
 
 def deposit
 puts "How much would you like to deposit?"
