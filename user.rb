@@ -19,7 +19,7 @@ puts "How much would you like to deposit?"
 puts ">"
 deposited = $stdin.gets.chomp.to_f
 @ammount = @ammount + deposited
-puts "your new balance is #{@ammount}"
+puts "your new balance is $#{@ammount}"
 end
 
 def withdrawl
@@ -28,12 +28,15 @@ def withdrawl
 	withdraw = $stdin.gets.chomp.to_f
 	if withdraw > @ammount
 		withdraw = @ammount
+		@ammount = 0
 	else
 		@ammount = @ammount - withdraw
 	end
-	puts "your new balance is #{@ammmount}"
+	puts "your new balance is $#{@ammmount}"
 end
-
+def balance
+	puts "your balance is $#{@ammount}"
+end
 
 
 
