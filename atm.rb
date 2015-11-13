@@ -1,3 +1,9 @@
+require 'gosu'
+require_relative 'atm.rb'
+require_relative 'user.rb'
+require_relative 'super_user.rb'
+require_relative 'z_order.rb'
+
 class  ATM
 
 
@@ -5,6 +11,7 @@ attr_accessor :users
 
 def initialize
 	$users = []
+	@font = Gosu::Font.new(20)
 end
 
 	def start_up	
@@ -92,6 +99,10 @@ end
 
 def exit
 	start_up
+end
+
+def draw
+	@font.draw('Test', 300, 200, ZOrder::UI, 1.0, 1.0, 0xff_70AF00)
 end
 
 
