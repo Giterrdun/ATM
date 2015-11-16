@@ -1,9 +1,11 @@
 require 'gosu'
+require 'rubygems'
 require_relative 'atm.rb'
 require_relative 'user.rb'
 require_relative 'super_user.rb'
 require_relative 'z_order.rb'
-
+require_relative 'text_fields.rb'
+require_relative 'text_window.rb'
 class  ATM
 
 
@@ -12,6 +14,8 @@ attr_accessor :users
 def initialize
 	$users = []
 	@font = Gosu::Font.new(20)
+	
+
 end
 
 	def start_up	
@@ -102,7 +106,18 @@ def exit
 end
 
 def draw
-	@font.draw('Test', 300, 200, ZOrder::UI, 1.0, 1.0, 0xff_70AF00)
+	start_up
+	user_name_phase
+	
+	
+end
+
+def user_name_phase
+	
+	
+	@font.draw('Username >', 200, 150, ZOrder::UI, 1.0, 1.0, 0xff_70AF00)
+	
+	
 end
 
 
